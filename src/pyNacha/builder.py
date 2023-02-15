@@ -52,6 +52,7 @@ class AchFile(object):
         batch_entries=None,
         credits=True,
         debits=False,
+        desc_date=None,
         eff_ent_date=None,
         company_id=None,
         entry_desc=None,
@@ -88,12 +89,12 @@ class AchFile(object):
             company_id=company_id or self.settings["company_id"],
             std_ent_cls_code=std_ent_cls_code,
             entry_desc=entry_desc,
-            desc_date=date.strftime("%m%d%y"),
+            desc_date=desc_date,
             eff_ent_date=eff_ent_date.strftime("%y%m%d"),  # YYMMDD
             settlement_date='000',
             orig_stat_code="1",
             orig_dfi_id=self.settings["immediate_dest"][:8],
-            company_name=(company_name or self.settings["company_name"])[:16],
+            company_name=(company_name or self.settings["company_name"])[:26],
         )
 
         entries, failed_entry_errors = [], []
