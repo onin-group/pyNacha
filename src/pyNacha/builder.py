@@ -94,7 +94,7 @@ class AchFile(object):
             settlement_date='000',
             orig_stat_code="1",
             orig_dfi_id=self.settings["immediate_dest"][:8],
-            company_name=(company_name or self.settings["company_name"])[:26],
+            company_name=(company_name or self.settings["company_name"])[:16],
         )
 
         entries, failed_entry_errors = [], []
