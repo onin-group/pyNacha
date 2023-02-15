@@ -96,7 +96,7 @@ class AchFile(object):
             orig_stat_code="1",
             orig_dfi_id=self.settings["immediate_dest"][:8],
             company_name=(company_name or self.settings["company_name"])[:16],
-            cmpy_dis_data = cmpy_dis_data or self.settings["cmpy_dis_data"],
+            cmpy_dis_data = cmpy_dis_data or None,
         )
 
         entries, failed_entry_errors = [], []
