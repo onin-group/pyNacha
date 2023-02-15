@@ -89,7 +89,7 @@ class AchFile(object):
             company_id=company_id or self.settings["company_id"],
             std_ent_cls_code=std_ent_cls_code,
             entry_desc=entry_desc,
-            desc_date=desc_date,
+            desc_date=date_desc or date.strftime("%m%d%y"),
             eff_ent_date=eff_ent_date.strftime("%y%m%d"),  # YYMMDD
             settlement_date='000',
             orig_stat_code="1",
