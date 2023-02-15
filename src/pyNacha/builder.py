@@ -57,6 +57,7 @@ class AchFile(object):
         company_id=None,
         entry_desc=None,
         company_name=None,
+        cmpy_dis_data=None,
     ):
         """
         Use this to add batches to the file. For valid std_ent_cls_codes see:
@@ -95,7 +96,7 @@ class AchFile(object):
             orig_stat_code="1",
             orig_dfi_id=self.settings["immediate_dest"][:8],
             company_name=(company_name or self.settings["company_name"])[:16],
-            cmpy_dis_data = "FACTOR",
+            cmpy_dis_data = cmpy_dis_data or self.settings["cmpy_dis_data"],
         )
 
         entries, failed_entry_errors = [], []
